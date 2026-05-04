@@ -1,36 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Search, Menu, X } from "lucide-react";
-
-const navLinks = [
-  { name: "Home", href: "#", active: true },
-  {
-    name: "About Us",
-    href: "#",
-    dropdown: [
-      "Company Profile",
-      "History",
-      "Purpose & Values",
-      "Message from The Founder",
-      "Vision & Mission",
-      "Awards",
-    ],
-  },
-  {
-    name: "Products",
-    href: "#",
-    dropdown: ["Taxi Service", "Car Rental", "Shuttle Service", "Charter Bus", "Logistic"],
-  },
-  { name: "Sustainability", href: "#" },
-  { name: "EZPoint", href: "#" },
-  { name: "Contact Us", href: "#" },
-  { name: "Career", href: "#" },
-];
+import { Search, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,54 +40,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <div
-                key={link.name}
-                className="relative"
-                onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <a
-                  href={link.href}
-                  className={`flex items-center gap-1 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                    link.active
-                      ? "bg-brand-blue text-white"
-                      : "text-gray-700 hover:text-brand-blue hover:bg-gray-50"
-                  }`}
-                >
-                  {link.name}
-                  {link.dropdown && (
-                    <ChevronDown className="w-4 h-4" />
-                  )}
-                </a>
-
-                {/* Dropdown */}
-                <AnimatePresence>
-                  {link.dropdown && activeDropdown === link.name && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden py-2"
-                    >
-                      {link.dropdown.map((item) => (
-                        <a
-                          key={item}
-                          href="#"
-                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-blue/5 hover:text-brand-blue transition-colors"
-                        >
-                          {item}
-                        </a>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
+          {/* Desktop Navigation removed */}
 
           {/* Right Side */}
           <div className="hidden lg:flex items-center gap-4">
@@ -151,19 +78,7 @@ export default function Navbar() {
             className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
           >
             <div className="px-4 py-4 space-y-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`block px-4 py-3 rounded-lg text-sm font-medium ${
-                    link.active
-                      ? "bg-brand-blue text-white"
-                      : "text-gray-700 hover:bg-gray-50"
-                  }`}
-                >
-                  {link.name}
-                </a>
-              ))}
+              {/* Mobile Menu Links removed */}
               <div className="flex items-center gap-2 px-4 py-3">
                 <span className="text-brand-blue text-sm font-medium">EN</span>
                 <span className="text-gray-300">|</span>
