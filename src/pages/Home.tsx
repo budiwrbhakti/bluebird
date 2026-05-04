@@ -10,8 +10,8 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <ProductSection />
       <AppSection />
+      <ProductSection />
       <ExploreSection />
       <Footer />
     </main>
