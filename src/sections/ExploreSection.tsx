@@ -19,74 +19,92 @@ export default function ExploreSection() {
   const cities = activeTab === "goldenbird" ? goldenbirdCities : bigbirdCities;
 
   return (
-    <section className="py-16 md:py-20 bg-white">
+    <section className="py-20 md:py-28 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-2xl md:text-3xl font-bold text-brand-dark-blue mb-8">
-            Explore your interests
-          </h2>
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark-blue mb-4">
+              Jelajahi Indonesia Bersama Kami
+            </h2>
+            <p className="text-gray-500 text-lg">
+              Kami hadir di berbagai kota besar di seluruh Indonesia untuk memastikan 
+              kebutuhan transportasi Anda terpenuhi dengan standar layanan terbaik.
+            </p>
+          </motion.div>
 
           {/* Tabs */}
-          <div className="flex gap-6 border-b border-gray-200 mb-8">
+          <div className="flex gap-2 bg-white p-1.5 rounded-2xl shadow-sm border border-gray-100">
             <button
               onClick={() => setActiveTab("goldenbird")}
-              className={`pb-3 text-sm md:text-base font-semibold transition-colors relative ${
+              className={`px-6 py-3 text-sm md:text-base font-bold rounded-xl transition-all ${
                 activeTab === "goldenbird"
-                  ? "text-brand-blue"
-                  : "text-gray-400 hover:text-gray-600"
+                  ? "bg-brand-blue text-white shadow-md"
+                  : "text-gray-500 hover:text-brand-blue hover:bg-brand-blue/5"
               }`}
             >
               Goldenbird
-              {activeTab === "goldenbird" && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-blue"
-                />
-              )}
             </button>
             <button
               onClick={() => setActiveTab("bigbird")}
-              className={`pb-3 text-sm md:text-base font-semibold transition-colors relative ${
+              className={`px-6 py-3 text-sm md:text-base font-bold rounded-xl transition-all ${
                 activeTab === "bigbird"
-                  ? "text-brand-blue"
-                  : "text-gray-400 hover:text-gray-600"
+                  ? "bg-brand-blue text-white shadow-md"
+                  : "text-gray-500 hover:text-brand-blue hover:bg-brand-blue/5"
               }`}
             >
               Bigbird
-              {activeTab === "bigbird" && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-blue"
-                />
-              )}
             </button>
           </div>
+        </div>
 
-          {/* Cities Grid */}
+        {/* Cities Grid */}
+        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-1.5 h-6 bg-brand-cyan rounded-full" />
+            <h3 className="text-xl font-bold text-gray-800 uppercase tracking-wider">
+              {activeTab === "goldenbird" ? "Pilihan Kota Goldenbird" : "Pilihan Kota Bigbird"}
+              <span className="ml-3 text-gray-400 font-normal normal-case">({cities.length} Kota)</span>
+            </h3>
+          </div>
+
           <motion.div
             key={activeTab}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-6 gap-x-4"
           >
-            {cities.map((city) => (
-              <a
+            {cities.map((city, index) => (
+              <motion.a
                 key={city}
                 href="#"
-                className="flex items-center gap-2 px-4 py-3 rounded-lg text-gray-600 hover:text-brand-blue hover:bg-brand-blue/5 transition-all group"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className="flex items-center gap-3 group"
               >
-                <MapPin className="w-4 h-4 text-gray-400 group-hover:text-brand-blue transition-colors" />
-                <span className="text-sm font-medium">{city}</span>
-              </a>
+                <div className="w-8 h-8 rounded-full bg-brand-blue/5 flex items-center justify-center group-hover:bg-brand-blue group-hover:shadow-lg transition-all duration-300">
+                  <MapPin className="w-4 h-4 text-brand-blue group-hover:text-white transition-colors" />
+                </div>
+                <span className="text-sm font-semibold text-gray-700 group-hover:text-brand-blue transition-colors">
+                  {city}
+                </span>
+              </motion.a>
             ))}
           </motion.div>
-        </motion.div>
+          
+          <div className="mt-12 pt-8 border-t border-gray-100 flex justify-center">
+            <button className="flex items-center gap-2 text-brand-blue font-bold hover:gap-3 transition-all">
+              Lihat Seluruh Layanan <MapPin className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

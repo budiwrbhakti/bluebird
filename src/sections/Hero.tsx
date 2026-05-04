@@ -4,22 +4,25 @@ import { ChevronLeft, ChevronRight, Car } from "lucide-react";
 
 const slides = [
   {
-    image: "/images/hero-bg.jpg",
-    subtitle: "experience lebih",
-    title: "experience lebih",
-    highlight: "nyaman",
+    image: "/images/hero-luxury.png",
+    subtitle: "Premium Mobility",
+    title: "Nikmati Perjalanan",
+    highlight: "Eksklusif",
+    description: "Layanan Silverbird memberikan kenyamanan dan privasi tingkat tinggi untuk setiap keperluan bisnis maupun pribadi Anda.",
+  },
+  {
+    image: "/images/hero-family.png",
+    subtitle: "Family & Leisure",
+    title: "Liburan Aman Bersama",
+    highlight: "Keluarga",
+    description: "Jadikan setiap momen liburan lebih bermakna dengan layanan transportasi yang aman, nyaman, dan terpercaya.",
   },
   {
     image: "/images/hero-bg.jpg",
-    subtitle: "perjalanan aman",
-    title: "perjalanan aman",
-    highlight: "terpercaya",
-  },
-  {
-    image: "/images/hero-bg.jpg",
-    subtitle: "layanan profesional",
-    title: "layanan profesional",
-    highlight: "berkualitas",
+    subtitle: "Daily Reliable",
+    title: "Andalan Setiap",
+    highlight: "Perjalanan",
+    description: "Dari kantor hingga ke rumah, Bluebird selalu setia menemani langkah Anda dengan standar layanan terbaik.",
   },
 ];
 
@@ -60,17 +63,32 @@ export default function Hero() {
       <div className="relative z-10 h-full flex flex-col justify-end pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <motion.div
           key={`text-${currentSlide}`}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="max-w-3xl"
         >
-          <p className="text-white/90 text-lg md:text-xl font-medium italic mb-2">
-            {slides[currentSlide].subtitle}
-          </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-[2px] w-12 bg-brand-cyan" />
+            <p className="text-white/90 text-lg md:text-xl font-semibold tracking-wide uppercase">
+              {slides[currentSlide].subtitle}
+            </p>
+          </div>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6">
             {slides[currentSlide].title}{" "}
             <span className="text-brand-cyan">{slides[currentSlide].highlight}</span>
           </h1>
+          <p className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed mb-8">
+            {slides[currentSlide].description}
+          </p>
+          <div className="flex gap-4">
+            <button className="bg-brand-blue text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-dark-blue transition-all hover:shadow-lg hover:scale-105 active:scale-95">
+              Pesan Sekarang
+            </button>
+            <button className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all">
+              Lihat Detail
+            </button>
+          </div>
         </motion.div>
       </div>
 
