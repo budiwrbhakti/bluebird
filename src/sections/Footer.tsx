@@ -44,7 +44,7 @@ export default function Footer() {
               </svg>
             </div>
             <div>
-              <span className="text-white font-bold text-xl block">Bluebird</span>
+              <span className="text-white font-bold text-xl block">Asen Hanif</span>
               <span className="text-white/70 text-sm">Group</span>
             </div>
           </div>
