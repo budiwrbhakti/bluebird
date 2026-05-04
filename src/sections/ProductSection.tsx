@@ -43,8 +43,8 @@ const services = [
     ],
   },
 ];
-
-const featureIcons: Record<string, React.ReactNode> = {
+// Icons for vehicle features
+const featureIcons = {
   "6 Seats": (
     <svg viewBox="0 0 24 24" className="w-5 h-5 text-brand-blue" fill="currentColor">
       <path d="M4 16v2h16v-2c0-2.67-5.33-4-8-4s-8 1.33-8 4zm8-6c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z" />
