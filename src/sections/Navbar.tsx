@@ -49,6 +49,12 @@ export default function Navbar() {
               <span className="mx-1 text-gray-300">|</span>
               <span className="text-gray-500 cursor-pointer hover:text-brand-blue transition-colors">ID</span>
             </div>
+            <a
+              href="#download"
+              className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors"
+            >
+              Download
+            </a>
             <button className="p-2 rounded-full hover:bg-gray-100 transition-colors">
               <Search className="w-5 h-5 text-gray-600" />
             </button>
@@ -79,6 +85,13 @@ export default function Navbar() {
           >
             <div className="px-4 py-4 space-y-1">
               {/* Mobile Menu Links removed */}
+              <a
+                href="#download"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+              >
+                Download
+              </a>
               <div className="flex items-center gap-2 px-4 py-3">
                 <span className="text-brand-blue text-sm font-medium">EN</span>
                 <span className="text-gray-300">|</span>
