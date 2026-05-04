@@ -51,8 +51,9 @@ export default function ProductSection() {
                 </p>
               </div>
 
-              {/* Vehicles Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+              {/* Vehicles Center */}
+              <div className="flex justify-center mt-8">
+                <div className="max-w-md w-full">
                 {service.vehicles.map((vehicle, vi) => (
                   <motion.div
                     key={vehicle.name}
@@ -93,6 +94,7 @@ export default function ProductSection() {
                     </div>
                   </motion.div>
                 ))}
+                </div>
               </div>
 
               {/* Divider */}
@@ -148,31 +150,6 @@ const SERVICES_DATA = [
         name: "Executive Taxi - Alphard",
         image: "/images/taxi-car.png",
         features: ["6 Seats", "Charging Port", "Available On App"],
-      },
-      {
-        name: "Executive Taxi - New Alphard",
-        image: "/images/taxi-car.png",
-        features: ["6 Seats", "Charging Port", "Available On App"],
-      },
-    ],
-  },
-  {
-    brand: "Bluebird",
-    brandLogo: null,
-    category: "Taxi Service",
-    description:
-      "Bluebird Taxi is Indonesia's most trusted transportation service. With a fleet of well-maintained vehicles and professional drivers, we ensure every journey is safe, comfortable, and reliable.",
-    bgColor: "bg-brand-blue",
-    vehicles: [
-      {
-        name: "Regular Taxi - Avanza",
-        image: "/images/taxi-car.png",
-        features: ["4 Seats", "Air Conditioned", "Available On App"],
-      },
-      {
-        name: "Regular Taxi - Innova",
-        image: "/images/taxi-car.png",
-        features: ["6 Seats", "Air Conditioned", "Available On App"],
       },
     ],
   },
