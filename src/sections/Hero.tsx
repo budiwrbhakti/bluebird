@@ -121,41 +121,7 @@ export default function Hero() {
         <ChevronRight className="w-6 h-6 text-white" />
       </button>
 
-      {/* Floating Bottom Card */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        className="absolute bottom-6 left-4 right-4 md:left-8 md:right-8 z-20"
-      >
-        <div className="bg-white rounded-2xl shadow-2xl p-4 md:p-6 max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-            {/* Single Product */}
-            <div className="flex items-center gap-4 flex-1">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-brand-light rounded-xl flex items-center justify-center shrink-0">
-                <img
-                  src="/images/taxi-car.png"
-                  alt="Taxi Service"
-                  className="w-14 h-14 md:w-16 md:h-16 object-contain"
-                />
-              </div>
-              <div>
-                <h3 className="text-brand-blue font-bold text-lg md:text-xl">Taxi Service</h3>
-                <p className="text-gray-500 text-sm">Your trusted ride, anytime anywhere</p>
-              </div>
-            </div>
 
-            {/* CTA */}
-            <a
-              href="#product"
-              className="w-full md:w-auto bg-brand-blue text-white px-8 py-3 rounded-xl font-medium hover:bg-brand-dark-blue transition-colors flex items-center justify-center gap-2 shrink-0"
-            >
-              <Car className="w-5 h-5" />
-              Explore Now
-            </a>
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }
