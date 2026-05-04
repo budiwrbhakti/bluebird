@@ -1,32 +1,79 @@
 import { motion } from "framer-motion";
-import { Car, Phone, Shield, Clock, Star, ArrowRight } from "lucide-react";
 
-const features = [
+const services = [
   {
-    icon: Shield,
-    title: "Safe & Secure",
-    description: "All drivers are professionally trained and verified for your safety.",
+    brand: "Silverbird",
+    brandLogo: null,
+    category: "Executive Taxi",
+    description:
+      "Silverbird is a line of premium vehicles that ranges from a minivan to electric vehicles. This line of premium taxis are known for their distinctive black color, and comfort. Silverbird gives a new meaning to executive taxis.",
+    bgColor: "bg-[#6b7280]",
+    vehicles: [
+      {
+        name: "Executive Taxi - Alphard",
+        image: "/images/taxi-car.png",
+        features: ["6 Seats", "Charging Port", "Available On App"],
+      },
+      {
+        name: "Executive Taxi - New Alphard",
+        image: "/images/taxi-car.png",
+        features: ["6 Seats", "Charging Port", "Available On App"],
+      },
+    ],
   },
   {
-    icon: Clock,
-    title: "24/7 Available",
-    description: "Our taxi service operates round the clock, whenever you need it.",
-  },
-  {
-    icon: Star,
-    title: "Premium Quality",
-    description: "Well-maintained vehicles ensuring a comfortable ride every time.",
-  },
-  {
-    icon: Phone,
-    title: "Easy Booking",
-    description: "Book through our app or call center with just a few taps.",
+    brand: "Bluebird",
+    brandLogo: null,
+    category: "Taxi Service",
+    description:
+      "Bluebird Taxi is Indonesia's most trusted transportation service. With a fleet of well-maintained vehicles and professional drivers, we ensure every journey is safe, comfortable, and reliable.",
+    bgColor: "bg-brand-blue",
+    vehicles: [
+      {
+        name: "Regular Taxi - Avanza",
+        image: "/images/taxi-car.png",
+        features: ["4 Seats", "Air Conditioned", "Available On App"],
+      },
+      {
+        name: "Regular Taxi - Innova",
+        image: "/images/taxi-car.png",
+        features: ["6 Seats", "Air Conditioned", "Available On App"],
+      },
+    ],
   },
 ];
 
+const featureIcons: Record<string, JSX.Element> = {
+  "6 Seats": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 text-brand-blue" fill="currentColor">
+      <path d="M4 16v2h16v-2c0-2.67-5.33-4-8-4s-8 1.33-8 4zm8-6c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z" />
+    </svg>
+  ),
+  "4 Seats": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 text-brand-blue" fill="currentColor">
+      <path d="M4 16v2h16v-2c0-2.67-5.33-4-8-4s-8 1.33-8 4zm8-6c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z" />
+    </svg>
+  ),
+  "Charging Port": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 text-brand-blue" fill="currentColor">
+      <path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4zM13 18h-2v-2h2v2zm0-4h-2V9h2v5z" />
+    </svg>
+  ),
+  "Air Conditioned": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 text-brand-blue" fill="currentColor">
+      <path d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22v-2z" />
+    </svg>
+  ),
+  "Available On App": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 text-brand-blue" fill="currentColor">
+      <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" />
+    </svg>
+  ),
+};
+
 export default function ProductSection() {
   return (
-    <section id="product" className="py-20 bg-white">
+    <section id="product" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -34,83 +81,96 @@ export default function ProductSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-4">
-            Our Service
+            Our Services
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            Experience the most reliable taxi service in Indonesia, serving millions of passengers with pride.
+            Experience the most reliable transportation service in Indonesia, serving millions of passengers with pride.
           </p>
         </motion.div>
 
-        {/* Single Product Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-gradient-to-br from-brand-blue to-brand-dark-blue rounded-3xl overflow-hidden shadow-2xl"
-        >
-          <div className="flex flex-col lg:flex-row">
-            {/* Left Content */}
-            <div className="lg:w-1/2 p-8 md:p-12 text-white">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                  <Car className="w-6 h-6 text-white" />
+        {/* Service Cards */}
+        <div className="flex flex-col gap-16">
+          {services.map((service, si) => (
+            <motion.div
+              key={service.brand}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: si * 0.1 }}
+            >
+              {/* Brand Banner */}
+              <div className={`${service.bgColor} rounded-2xl p-6 md:p-8`}>
+                {/* Brand Logo + Name */}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="currentColor">
+                      <path d="M21 6.5C21 8.43 19.43 10 17.5 10S14 8.43 14 6.5 15.57 3 17.5 3 21 4.57 21 6.5zM6.5 10C8.43 10 10 8.43 10 6.5S8.43 3 6.5 3 3 4.57 3 6.5 4.57 10 6.5 10zm0 1C4.01 11 -1 12.01 -1 14.5V15c0 .55.45 1 1 1h13c.55 0 1-.45 1-1v-.5c0-2.49-5.01-3.5-7.5-3.5zm11 0c-2.49 0-7.5 1.01-7.5 3.5V15c0 .55.45 1 1 1h13c.55 0 1-.45 1-1v-.5c0-2.49-5.01-3.5-7.5-3.5z" />
+                    </svg>
+                  </div>
+                  <span className="text-white font-bold text-xl">{service.brand}</span>
                 </div>
-                <span className="text-white/80 text-sm font-medium uppercase tracking-wider">
-                  Featured Service
-                </span>
+
+                {/* Category + Description */}
+                <h3 className="text-white font-bold text-lg mb-2">{service.category}</h3>
+                <p className="text-white/80 text-sm leading-relaxed max-w-3xl">
+                  {service.description}
+                </p>
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">Taxi Service</h3>
-              <p className="text-white/80 text-lg leading-relaxed mb-8">
-                Bluebird Taxi is Indonesia's most trusted transportation service. 
-                With a fleet of well-maintained vehicles and professional drivers, 
-                we ensure every journey is safe, comfortable, and reliable.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                {features.map((feature, index) => (
+              {/* Vehicles Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                {service.vehicles.map((vehicle, vi) => (
                   <motion.div
-                    key={feature.title}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    key={vehicle.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                    className="flex items-start gap-3"
+                    transition={{ duration: 0.5, delay: 0.1 + vi * 0.1 }}
+                    className="flex flex-col items-center text-center"
                   >
-                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center shrink-0">
-                      <feature.icon className="w-5 h-5 text-white" />
+                    {/* Car Image */}
+                    <div className="w-full flex items-end justify-center h-44 mb-4">
+                      <img
+                        src={vehicle.image}
+                        alt={vehicle.name}
+                        className="h-full object-contain drop-shadow-md"
+                      />
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-sm">{feature.title}</h4>
-                      <p className="text-white/60 text-xs mt-1">{feature.description}</p>
+
+                    {/* Car Name */}
+                    <h4 className="text-gray-800 font-semibold text-lg mb-4">
+                      {vehicle.name}
+                    </h4>
+
+                    {/* Feature List */}
+                    <div className="flex flex-col items-start gap-2 self-start w-full pl-4 md:pl-12">
+                      {vehicle.features.map((feat) => (
+                        <div key={feat} className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
+                            {featureIcons[feat] ?? (
+                              <svg viewBox="0 0 24 24" className="w-4 h-4 text-brand-blue" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                              </svg>
+                            )}
+                          </div>
+                          <span className="text-gray-600 text-sm">{feat}</span>
+                        </div>
+                      ))}
                     </div>
                   </motion.div>
                 ))}
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-white text-brand-blue px-6 py-3 rounded-xl font-semibold hover:bg-brand-cyan hover:text-white transition-colors"
-              >
-                Book a Ride
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-
-            {/* Right Image */}
-            <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-[500px]">
-              <img
-                src="/images/taxi-car.png"
-                alt="Bluebird Taxi"
-                className="absolute inset-0 w-full h-full object-contain p-4 md:p-8"
-              />
-            </div>
-          </div>
-        </motion.div>
+              {/* Divider */}
+              {si < services.length - 1 && (
+                <div className="border-b border-gray-200 mt-16" />
+              )}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
