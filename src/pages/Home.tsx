@@ -2,6 +2,7 @@ import Navbar from "@/sections/Navbar";
 import Hero from "@/sections/Hero";
 import ProductSection from "@/sections/ProductSection";
 import AppSection from "@/sections/AppSection";
+import GreenFutureSection from "@/sections/GreenFutureSection";
 import ExploreSection from "@/sections/ExploreSection";
 import Footer from "@/sections/Footer";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <AppSection />
       <ProductSection />
+      <GreenFutureSection />
       <ExploreSection />
       <Footer />
     </main>
