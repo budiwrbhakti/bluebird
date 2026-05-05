@@ -30,21 +30,18 @@ export default function GreenFutureSection() {
         </motion.div>
       </div>
 
-      {/* Full Width Landscape Illustration */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative w-full h-[350px] md:h-[550px] lg:h-[650px] mt-auto"
-      >
+      {/* Full Width Landscape Illustration with Panning Animation */}
+      <div className="relative w-full h-[400px] md:h-[600px] lg:h-[800px] mt-auto overflow-hidden">
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-luxury-dark to-transparent z-10" />
-        <img
+        
+        <motion.img
           src="/images/green-future-indonesia.png"
           alt="Green Future Indonesia"
-          className="w-full h-full object-cover object-[center_55%]"
+          className="absolute top-0 left-0 w-[115%] h-full max-w-none object-cover object-[center_80%]"
+          animate={{ x: ["-7%", "0%", "-7%"] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
         />
-      </motion.div>
+      </div>
     </section>
   );
 }
