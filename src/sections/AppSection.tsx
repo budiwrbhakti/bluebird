@@ -34,13 +34,7 @@ export default function AppSection() {
               and enjoy seamless payment options. Your journey starts with a single tap.
             </p>
 
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 bg-luxury-gold text-luxury-dark px-8 py-4 font-bold hover:bg-luxury-gold-light transition-all hover:scale-[1.02] active:scale-[0.98] mb-8 tracking-widest uppercase text-sm"
-            >
-              <ExternalLink className="w-5 h-5" />
-              Explore Now
-            </a>
+
 
             {/* App Store Badges */}
             <div className="flex flex-wrap gap-3">
@@ -66,17 +60,7 @@ export default function AppSection() {
                   </div>
                 </div>
               </a>
-              <a href="#" className="block">
-                <div className="h-11 bg-black rounded-lg px-4 flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="currentColor">
-                    <path d="M11,13.5V21.5H3V13.5H11M12,2L17.5,11H6.5L12,2M17.5,13C20,13 22,15 22,17.5C22,20 20,22 17.5,22C15,22 13,20 13,17.5C13,15 15,13 17.5,13Z" />
-                  </svg>
-                  <div className="text-white">
-                    <div className="text-[10px] leading-none">EXPLORE IT ON</div>
-                    <div className="text-sm font-semibold leading-tight">AppGallery</div>
-                  </div>
-                </div>
-              </a>
+
             </div>
           </motion.div>
 

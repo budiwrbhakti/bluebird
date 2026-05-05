@@ -99,16 +99,7 @@ export default function Hero() {
               {slides[currentSlide].description}
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4">
-              <button className="group relative bg-luxury-gold text-luxury-dark px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-luxury-gold-light transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden">
-                <span className="relative z-10">Pesan Sekarang</span>
-                <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300" />
-              </button>
-              <button className="border border-luxury-gold/50 text-luxury-gold px-8 py-4 font-semibold text-sm tracking-widest uppercase hover:bg-luxury-gold/10 transition-all duration-300">
-                Lihat Armada
-              </button>
-            </div>
+
           </motion.div>
         </AnimatePresence>
       </div>

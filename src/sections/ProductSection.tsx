@@ -45,16 +45,6 @@ export default function ProductSection() {
                 Silverbird menghadirkan pengalaman berkendara kelas dunia dengan armada Denza D9 — kendaraan listrik premium yang menggabungkan kemewahan, teknologi canggih, dan kepedulian lingkungan.
               </p>
             </div>
-            <div className="flex gap-3 shrink-0">
-              <a
-                href="#download"
-                className="bg-luxury-gold text-luxury-dark px-6 py-3 font-bold text-sm tracking-widest uppercase hover:bg-luxury-gold-light transition-all hover:scale-105 active:scale-95"
-              >
-                Pesan Sekarang
-              </a>
-              <button className="border border-luxury-gold/40 text-luxury-gold px-6 py-3 font-semibold text-sm tracking-widest uppercase hover:bg-luxury-gold/10 transition-all">
-                Lihat Detail
-              </button>
             </div>
           </div>
         </motion.div>
