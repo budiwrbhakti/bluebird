@@ -19,7 +19,7 @@ export default function ExploreSection() {
   const cities = activeTab === "goldenbird" ? goldenbirdCities : bigbirdCities;
 
   return (
-    <section className="py-20 md:py-28 bg-gray-50/50">
+    <section className="py-20 md:py-28 bg-luxury-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
           <motion.div
@@ -29,33 +29,33 @@ export default function ExploreSection() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark-blue mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-luxury-platinum mb-4">
               Jelajahi Indonesia Bersama Kami
             </h2>
-            <p className="text-gray-500 text-lg">
+            <p className="text-luxury-platinum-muted text-lg">
               Kami hadir di berbagai kota besar di seluruh Indonesia untuk memastikan 
               kebutuhan transportasi Anda terpenuhi dengan standar layanan terbaik.
             </p>
           </motion.div>
 
           {/* Tabs */}
-          <div className="flex gap-2 bg-white p-1.5 rounded-2xl shadow-sm border border-gray-100">
+          <div className="flex gap-2 bg-luxury-navy/80 border border-luxury-gold/20 p-1.5">
             <button
               onClick={() => setActiveTab("goldenbird")}
-              className={`px-6 py-3 text-sm md:text-base font-bold rounded-xl transition-all ${
+              className={`px-6 py-3 text-sm md:text-base font-bold transition-all tracking-wider uppercase text-xs ${
                 activeTab === "goldenbird"
-                  ? "bg-brand-blue text-white shadow-md"
-                  : "text-gray-500 hover:text-brand-blue hover:bg-brand-blue/5"
+                  ? "bg-luxury-gold text-luxury-dark"
+                  : "text-luxury-platinum-muted hover:text-luxury-gold"
               }`}
             >
               Goldenbird
             </button>
             <button
               onClick={() => setActiveTab("bigbird")}
-              className={`px-6 py-3 text-sm md:text-base font-bold rounded-xl transition-all ${
+              className={`px-6 py-3 text-sm md:text-base font-bold transition-all tracking-wider uppercase text-xs ${
                 activeTab === "bigbird"
-                  ? "bg-brand-blue text-white shadow-md"
-                  : "text-gray-500 hover:text-brand-blue hover:bg-brand-blue/5"
+                  ? "bg-luxury-gold text-luxury-dark"
+                  : "text-luxury-platinum-muted hover:text-luxury-gold"
               }`}
             >
               Bigbird
@@ -64,12 +64,12 @@ export default function ExploreSection() {
         </div>
 
         {/* Cities Grid */}
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
+        <div className="border border-luxury-gold/20 bg-luxury-navy/40 p-8 md:p-12">
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-1.5 h-6 bg-brand-cyan rounded-full" />
-            <h3 className="text-xl font-bold text-gray-800 uppercase tracking-wider">
+            <div className="w-[2px] h-5 bg-luxury-gold" />
+            <h3 className="text-base font-bold text-luxury-platinum uppercase tracking-[0.2em]">
               {activeTab === "goldenbird" ? "Pilihan Kota Goldenbird" : "Pilihan Kota Bigbird"}
-              <span className="ml-3 text-gray-400 font-normal normal-case">({cities.length} Kota)</span>
+              <span className="ml-3 text-luxury-platinum-muted/60 font-normal normal-case tracking-normal text-sm">({cities.length} Kota)</span>
             </h3>
           </div>
 
@@ -89,18 +89,18 @@ export default function ExploreSection() {
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 className="flex items-center gap-3 group"
               >
-                <div className="w-8 h-8 rounded-full bg-brand-blue/5 flex items-center justify-center group-hover:bg-brand-blue group-hover:shadow-lg transition-all duration-300">
-                  <MapPin className="w-4 h-4 text-brand-blue group-hover:text-white transition-colors" />
+                <div className="w-8 h-8 border border-luxury-gold/30 group-hover:border-luxury-gold flex items-center justify-center group-hover:bg-luxury-gold transition-all duration-300">
+                  <MapPin className="w-4 h-4 text-luxury-gold group-hover:text-luxury-dark transition-colors" />
                 </div>
-                <span className="text-sm font-semibold text-gray-700 group-hover:text-brand-blue transition-colors">
+                <span className="text-sm font-semibold text-luxury-platinum-muted group-hover:text-luxury-gold transition-colors">
                   {city}
                 </span>
               </motion.a>
             ))}
           </motion.div>
           
-          <div className="mt-12 pt-8 border-t border-gray-100 flex justify-center">
-            <button className="flex items-center gap-2 text-brand-blue font-bold hover:gap-3 transition-all">
+          <div className="mt-12 pt-8 border-t border-luxury-gold/20 flex justify-center">
+            <button className="flex items-center gap-2 text-luxury-gold font-bold hover:gap-3 transition-all text-sm tracking-widest uppercase">
               Lihat Seluruh Layanan <MapPin className="w-4 h-4" />
             </button>
           </div>

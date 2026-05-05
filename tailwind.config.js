@@ -44,6 +44,15 @@ module.exports = {
           cyan: "#22CCEE",
           light: "#F3F4F6",
         },
+        luxury: {
+          dark: "#08090f",
+          navy: "#0d1326",
+          gold: "#C9A85C",
+          "gold-light": "#E8C97E",
+          "gold-dark": "#9A7A3A",
+          platinum: "#F8F6F2",
+          "platinum-muted": "#C8C4BC",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

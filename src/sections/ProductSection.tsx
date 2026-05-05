@@ -1,4 +1,4 @@
-// Last Updated: 2026-05-04 17:05:00
+// Last Updated: 2026-05-05 09:05:00
 import { motion } from "framer-motion";
 import { Users, Zap, Smartphone, Shield, Wind, Star } from "lucide-react";
 
@@ -8,12 +8,15 @@ const SPECS = [
   { icon: Wind, label: "Klima Ganda", value: "Cabin Comfort" },
   { icon: Smartphone, label: "MyBluebird App", value: "Easy Booking" },
   { icon: Shield, label: "Asuransi Penuh", value: "Trip Protection" },
-  { icon: Star, label: "Rating 4.9", value: "Top Rated" },
+  { icon: Star, label: "Rating 5", value: "Top Rated" },
 ];
 
 export default function ProductSection() {
   return (
-    <section id="product-services-section" className="pt-24 bg-white overflow-hidden">
+    <section id="product-services-section" className="pt-24 bg-luxury-dark overflow-hidden">
+
+      {/* Gold top border */}
+      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-luxury-gold/40 to-transparent mb-16" />
 
       {/* Text & Specs Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
@@ -23,37 +26,44 @@ export default function ProductSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12"
+          transition={{ duration: 0.6 }}
+          className="mb-14"
         >
-          <span className="inline-block bg-brand-blue/10 text-brand-blue text-sm font-bold px-4 py-1.5 rounded-full mb-4 tracking-wide uppercase">
-            Our Services
-          </span>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-[1px] w-8 bg-luxury-gold" />
+            <span className="text-luxury-gold text-xs font-bold tracking-[0.3em] uppercase">
+              Our Services
+            </span>
+          </div>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold text-brand-dark-blue mb-3">
-                Silverbird — <span className="text-brand-blue">Denza D9</span>
+              <h2 className="text-3xl md:text-5xl font-bold text-luxury-platinum leading-tight mb-4">
+                Silverbird —{" "}
+                <span className="text-luxury-gold">Denza D9</span>
               </h2>
-              <p className="text-gray-500 text-lg max-w-2xl">
+              <p className="text-luxury-platinum-muted text-lg max-w-2xl leading-relaxed">
                 Silverbird menghadirkan pengalaman berkendara kelas dunia dengan armada Denza D9 — kendaraan listrik premium yang menggabungkan kemewahan, teknologi canggih, dan kepedulian lingkungan.
               </p>
             </div>
             <div className="flex gap-3 shrink-0">
               <a
                 href="#download"
-                className="bg-brand-blue text-white px-6 py-3 rounded-xl font-bold hover:bg-brand-dark-blue transition-all hover:scale-105 active:scale-95 text-sm"
+                className="bg-luxury-gold text-luxury-dark px-6 py-3 font-bold text-sm tracking-widest uppercase hover:bg-luxury-gold-light transition-all hover:scale-105 active:scale-95"
               >
                 Pesan Sekarang
               </a>
-              <button className="border border-gray-200 text-gray-700 px-6 py-3 rounded-xl font-bold hover:bg-gray-50 transition-all text-sm">
+              <button className="border border-luxury-gold/40 text-luxury-gold px-6 py-3 font-semibold text-sm tracking-widest uppercase hover:bg-luxury-gold/10 transition-all">
                 Lihat Detail
               </button>
             </div>
           </div>
         </motion.div>
 
+        {/* Gold divider */}
+        <div className="w-full h-[1px] bg-gradient-to-r from-luxury-gold/40 via-luxury-gold/20 to-transparent mb-12" />
+
         {/* Specs Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-0">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {SPECS.map((spec, i) => (
             <motion.div
               key={spec.label}
@@ -61,14 +71,14 @@ export default function ProductSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="bg-gray-50 hover:bg-brand-blue/5 border border-gray-100 hover:border-brand-blue/20 transition-all rounded-2xl p-4 flex flex-col items-center text-center gap-2"
+              className="group border border-luxury-gold/20 hover:border-luxury-gold/60 bg-luxury-gold/5 hover:bg-luxury-gold/10 transition-all duration-300 p-4 flex flex-col items-center text-center gap-3"
             >
-              <div className="w-10 h-10 bg-brand-blue/10 rounded-xl flex items-center justify-center">
-                <spec.icon className="w-5 h-5 text-brand-blue" />
+              <div className="w-10 h-10 border border-luxury-gold/30 group-hover:border-luxury-gold/60 flex items-center justify-center transition-all duration-300">
+                <spec.icon className="w-5 h-5 text-luxury-gold" />
               </div>
               <div>
-                <div className="text-gray-800 text-xs font-bold leading-tight">{spec.label}</div>
-                <div className="text-gray-400 text-[11px] mt-0.5">{spec.value}</div>
+                <div className="text-luxury-platinum text-xs font-bold leading-tight tracking-wide">{spec.label}</div>
+                <div className="text-luxury-platinum-muted text-[11px] mt-1 tracking-wider">{spec.value}</div>
               </div>
             </motion.div>
           ))}
@@ -83,8 +93,10 @@ export default function ProductSection() {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="relative w-full h-[350px] md:h-[550px] lg:h-[650px]"
       >
-        {/* Top fade */}
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white to-transparent z-10" />
+        {/* Top fade to dark */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-luxury-dark to-transparent z-10" />
+        {/* Bottom fade to dark */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-luxury-dark to-transparent z-10" />
         <img
           src="/images/denza-car.png"
           alt="Silverbird Denza D9 Executive"
