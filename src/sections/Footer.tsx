@@ -32,7 +32,7 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-dark-blue text-white">
+    <footer className="bg-luxury-dark text-white border-t border-luxury-gold/20">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Top Row - Logos & App Badges */}

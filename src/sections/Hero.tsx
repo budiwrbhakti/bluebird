@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
@@ -32,7 +32,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    }, 7000);
     return () => clearInterval(interval);
   }, []);
 
@@ -40,68 +40,89 @@ export default function Hero() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
-      {/* Background Image with Ken Burns Effect */}
-      <motion.div
-        key={currentSlide}
-        initial={{ scale: 1 }}
-        animate={{ scale: 1.05 }}
-        transition={{ duration: 20, ease: "linear" }}
-        className="absolute inset-0"
-      >
-        <img
-          src={slides[currentSlide].image}
-          alt="Hero"
-          className="w-full h-full object-cover"
-        />
-      </motion.div>
+    <section className="relative w-full h-screen min-h-[600px] overflow-hidden bg-luxury-dark">
+      {/* Background Image */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{ scale: 1.08, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="absolute inset-0"
+        >
+          <img
+            src={slides[currentSlide].image}
+            alt="Hero"
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
+      </AnimatePresence>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+      {/* Multi-layer dark overlay for luxury feel */}
+      <div className="absolute inset-0 bg-gradient-to-t from-luxury-dark via-luxury-dark/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-luxury-dark/80 via-luxury-dark/20 to-transparent" />
+
+      {/* Gold shimmer top border */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-luxury-gold/50 to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-end pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <motion.div
-          key={`text-${currentSlide}`}
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-3xl"
-        >
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-[2px] w-12 bg-brand-cyan" />
-            <p className="text-white/90 text-lg md:text-xl font-semibold tracking-wide uppercase">
-              {slides[currentSlide].subtitle}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`text-${currentSlide}`}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="max-w-3xl"
+          >
+            {/* Subtitle */}
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-[1px] w-10 bg-luxury-gold" />
+              <p className="text-luxury-gold text-sm md:text-base font-semibold tracking-[0.3em] uppercase">
+                {slides[currentSlide].subtitle}
+              </p>
+            </div>
+
+            {/* Title */}
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-luxury-platinum leading-tight mb-5">
+              {slides[currentSlide].title}{" "}
+              <span className="text-luxury-gold">{slides[currentSlide].highlight}</span>
+            </h1>
+
+            {/* Gold divider */}
+            <div className="w-24 h-[1px] bg-gradient-to-r from-luxury-gold to-transparent mb-5" />
+
+            {/* Description */}
+            <p className="text-luxury-platinum-muted text-base md:text-lg max-w-xl leading-relaxed mb-10">
+              {slides[currentSlide].description}
             </p>
-          </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6">
-            {slides[currentSlide].title}{" "}
-            <span className="text-brand-cyan">{slides[currentSlide].highlight}</span>
-          </h1>
-          <p className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed mb-8">
-            {slides[currentSlide].description}
-          </p>
-          <div className="flex gap-4">
-            <button className="bg-brand-blue text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-dark-blue transition-all hover:shadow-lg hover:scale-105 active:scale-95">
-              Pesan Sekarang
-            </button>
-            <button className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all">
-              Lihat Detail
-            </button>
-          </div>
-        </motion.div>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-4">
+              <button className="group relative bg-luxury-gold text-luxury-dark px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-luxury-gold-light transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden">
+                <span className="relative z-10">Pesan Sekarang</span>
+                <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300" />
+              </button>
+              <button className="border border-luxury-gold/50 text-luxury-gold px-8 py-4 font-semibold text-sm tracking-widest uppercase hover:bg-luxury-gold/10 transition-all duration-300">
+                Lihat Armada
+              </button>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
-      {/* Side Indicators */}
-      <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-3">
+      {/* Slide Indicators */}
+      <div className="absolute bottom-10 right-6 md:right-12 z-20 flex flex-col gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`transition-all duration-500 ${
               index === currentSlide
-                ? "bg-white scale-125"
-                : "bg-white/50 hover:bg-white/70"
+                ? "w-[2px] h-8 bg-luxury-gold"
+                : "w-[1px] h-4 bg-luxury-platinum-muted/40 hover:bg-luxury-gold/50"
             }`}
           />
         ))}
@@ -110,18 +131,21 @@ export default function Hero() {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/40 transition-colors"
+        className="absolute left-4 md:left-8 bottom-10 z-20 w-12 h-12 border border-luxury-gold/40 flex items-center justify-center text-luxury-gold hover:bg-luxury-gold hover:text-luxury-dark transition-all duration-300"
       >
-        <ChevronLeft className="w-6 h-6 text-white" />
+        <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute left-16 md:left-20 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/40 transition-colors"
+        className="absolute left-20 md:left-24 bottom-10 z-20 w-12 h-12 border border-luxury-gold/40 flex items-center justify-center text-luxury-gold hover:bg-luxury-gold hover:text-luxury-dark transition-all duration-300"
       >
-        <ChevronRight className="w-6 h-6 text-white" />
+        <ChevronRight className="w-5 h-5" />
       </button>
 
-
+      {/* Slide counter */}
+      <div className="absolute bottom-14 right-6 md:right-16 z-20 text-luxury-platinum-muted/60 text-xs tracking-widest">
+        0{currentSlide + 1} / 0{slides.length}
+      </div>
     </section>
   );
 }

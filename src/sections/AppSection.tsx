@@ -3,7 +3,7 @@ import { ExternalLink } from "lucide-react";
 
 export default function AppSection() {
   return (
-    <section id="download" className="py-20 md:py-28 bg-white overflow-hidden">
+    <section id="download" className="py-20 md:py-28 bg-luxury-dark overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Left Content */}
@@ -16,30 +16,30 @@ export default function AppSection() {
           >
             {/* MyBluebird Logo */}
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="currentColor">
+              <div className="w-12 h-12 border border-luxury-gold/50 bg-luxury-gold/10 flex items-center justify-center">
+                <svg viewBox="0 0 24 24" className="w-7 h-7 text-luxury-gold" fill="currentColor">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
                 </svg>
               </div>
-              <span className="text-brand-blue text-2xl font-bold">MyBluebird</span>
+              <span className="text-luxury-gold text-2xl font-bold tracking-wider">MyBluebird</span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark-blue mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-platinum mb-6 leading-tight">
               All-in-one Service{" "}
-              <span className="text-brand-blue">For Your Mobility Needs</span>
+              <span className="text-luxury-gold">For Your Mobility Needs</span>
             </h2>
 
-            <p className="text-gray-500 text-lg mb-8 leading-relaxed">
+            <p className="text-luxury-platinum-muted text-lg mb-8 leading-relaxed">
               Download the MyBluebird app to book rides, track your driver in real-time, 
               and enjoy seamless payment options. Your journey starts with a single tap.
             </p>
 
             <a
               href="#"
-              className="inline-flex items-center gap-2 bg-brand-blue text-white px-8 py-4 rounded-xl font-semibold hover:bg-brand-dark-blue transition-all hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] mb-8"
+              className="inline-flex items-center gap-2 bg-luxury-gold text-luxury-dark px-8 py-4 font-bold hover:bg-luxury-gold-light transition-all hover:scale-[1.02] active:scale-[0.98] mb-8 tracking-widest uppercase text-sm"
             >
               <ExternalLink className="w-5 h-5" />
-              Explore now
+              Explore Now
             </a>
 
             {/* App Store Badges */}
@@ -98,7 +98,7 @@ export default function AppSection() {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 bg-brand-cyan text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+                className="absolute -top-4 -right-4 bg-luxury-gold text-luxury-dark px-4 py-2 text-sm font-bold shadow-lg"
               >
                 Easy Booking!
               </motion.div>

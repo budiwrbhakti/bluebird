@@ -11,13 +11,13 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <hr className="border-gray-100" />
+      <hr className="border-luxury-gold/20" />
       <AppSection />
-      <hr className="border-gray-100" />
+      <hr className="border-luxury-gold/20" />
       <ProductSection />
-      <hr className="border-gray-100" />
+      <hr className="border-luxury-gold/20" />
       <GreenFutureSection />
-      <hr className="border-gray-100" />
+      <hr className="border-luxury-gold/20" />
       <ExploreSection />
       <Footer />
     </main>
