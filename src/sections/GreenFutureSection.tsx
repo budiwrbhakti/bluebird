@@ -36,14 +36,13 @@ export default function GreenFutureSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative w-full h-[400px] md:h-[600px] lg:h-[700px] mt-auto"
+        className="relative w-full h-[350px] md:h-[550px] lg:h-[650px] mt-auto"
       >
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-luxury-dark to-transparent z-10" />
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-luxury-dark to-transparent z-10" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-luxury-dark to-transparent z-10" />
         <img
           src="/images/green-future-indonesia.png"
           alt="Green Future Indonesia"
-          className="w-full h-full object-cover object-bottom"
+          className="w-full h-full object-cover object-[center_55%]"
         />
       </motion.div>
     </section>
