@@ -47,9 +47,9 @@ module.exports = {
         luxury: {
           dark: "#0b132b", // Deep Luxury Navy
           navy: "#070c1d", // Darker Navy
-          gold: "#00c46a", // Vibrant Luxury Green (Green SM)
-          "gold-light": "#33d98c",
-          "gold-dark": "#009650",
+          gold: "#44989E", // Elegant Teal / Green SM variant
+          "gold-light": "#60B2B8", // Lighter Teal
+          "gold-dark": "#2E757A", // Darker Teal
           platinum: "#F8F6F2",
           "platinum-muted": "#9ba6c1", // Cool platinum muted
         },
