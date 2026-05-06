@@ -45,13 +45,13 @@ module.exports = {
           light: "#F3F4F6",
         },
         luxury: {
-          dark: "#08090f",
-          navy: "#0d1326",
-          gold: "#C9A85C",
-          "gold-light": "#E8C97E",
-          "gold-dark": "#9A7A3A",
+          dark: "#0b132b", // Deep Luxury Navy
+          navy: "#070c1d", // Darker Navy
+          gold: "#00c46a", // Vibrant Luxury Green (Green SM)
+          "gold-light": "#33d98c",
+          "gold-dark": "#009650",
           platinum: "#F8F6F2",
-          "platinum-muted": "#C8C4BC",
+          "platinum-muted": "#9ba6c1", // Cool platinum muted
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
