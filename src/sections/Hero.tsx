@@ -22,7 +22,7 @@ const slides = [
     subtitle: "Daily Reliable",
     title: "Andalan Setiap",
     highlight: "Perjalanan",
-    description: "Dari kantor hingga ke rumah, Bluebird selalu setia menemani langkah Anda dengan standar layanan terbaik.",
+    description: "Dari kantor hingga ke rumah, Vigor selalu setia menemani langkah Anda dengan standar layanan terbaik.",
   },
 ];
 

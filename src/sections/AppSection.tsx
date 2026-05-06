@@ -14,14 +14,14 @@ export default function AppSection() {
             transition={{ duration: 0.6 }}
             className="lg:w-1/2"
           >
-            {/* MyBluebird Logo */}
+            {/* MyVigor Logo */}
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 border border-luxury-gold/50 bg-luxury-gold/10 flex items-center justify-center">
                 <svg viewBox="0 0 24 24" className="w-7 h-7 text-luxury-gold" fill="currentColor">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
                 </svg>
               </div>
-              <span className="text-luxury-gold text-2xl font-bold tracking-wider">MyBluebird</span>
+              <span className="text-luxury-gold text-2xl font-bold tracking-wider">MyVigor</span>
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-platinum mb-6 leading-tight">
@@ -30,7 +30,7 @@ export default function AppSection() {
             </h2>
 
             <p className="text-luxury-platinum-muted text-lg mb-8 leading-relaxed">
-              Download the MyBluebird app to book rides, track your driver in real-time, 
+              Download the MyVigor app to book rides, track your driver in real-time, 
               and enjoy seamless payment options. Your journey starts with a single tap.
             </p>
 
@@ -75,7 +75,7 @@ export default function AppSection() {
             <div className="relative">
               <img
                 src="/images/app-mockup.png"
-                alt="MyBluebird App"
+                alt="MyVigor App"
                 className="w-full max-w-[320px] md:max-w-[380px] drop-shadow-2xl"
               />
               {/* Floating Elements */}
