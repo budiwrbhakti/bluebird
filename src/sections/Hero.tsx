@@ -4,25 +4,25 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
-    image: "/images/hero-luxury.png",
-    subtitle: "Premium Mobility",
-    title: "Nikmati Perjalanan",
-    highlight: "Eksklusif",
-    description: "Layanan Silverbird memberikan kenyamanan dan privasi tingkat tinggi untuk setiap keperluan bisnis maupun pribadi Anda.",
+    image: "/images/bali-temple.png",
+    subtitle: "Premium Car Rental",
+    title: "Sewa Mobil",
+    highlight: "Eksklusif Bali",
+    description: "Jelajahi keindahan budaya dan alam Bali dengan kenyamanan maksimal bersama armada mewah Vigor Ride.",
   },
   {
-    image: "/images/hero-family.png",
-    subtitle: "Family & Leisure",
-    title: "Liburan Aman Bersama",
-    highlight: "Keluarga",
-    description: "Jadikan setiap momen liburan lebih bermakna dengan layanan transportasi yang aman, nyaman, dan terpercaya.",
+    image: "/images/bali-beach.png",
+    subtitle: "Vacation Mobility",
+    title: "Liburan Pantai",
+    highlight: "Lebih Nyaman",
+    description: "Perjalanan menuju destinasi wisata favorit di Bali menjadi lebih elegan dan berkesan dengan layanan rental profesional kami.",
   },
   {
-    image: "/images/hero-bg.jpg",
-    subtitle: "Daily Reliable",
-    title: "Andalan Setiap",
-    highlight: "Perjalanan",
-    description: "Dari kantor hingga ke rumah, Vigor selalu setia menemani langkah Anda dengan standar layanan terbaik.",
+    image: "/images/bali-resort.png",
+    subtitle: "VIP Transfer",
+    title: "Layanan Antar Jemput",
+    highlight: "Premium",
+    description: "Nikmati kemewahan perjalanan dari bandara ke resort impian Anda. Vigor Ride adalah pilihan utama rental mobil VVIP.",
   },
 ];
 
@@ -59,9 +59,8 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Multi-layer dark overlay for luxury feel */}
-      <div className="absolute inset-0 bg-gradient-to-t from-luxury-dark via-luxury-dark/40 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-luxury-dark/80 via-luxury-dark/20 to-transparent" />
+      {/* Subtle bottom overlay for text readability without darkening the whole image */}
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-luxury-dark/90 to-transparent" />
 
       {/* Gold shimmer top border */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-luxury-gold/50 to-transparent" />
