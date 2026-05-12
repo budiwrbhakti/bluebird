@@ -1,0 +1,50 @@
+{
+  "heroItems": [
+    {
+      "image": "/images/bali-culture.png",
+      "subtitle": "Premium Car Rental",
+      "title": "Sewa Mobil",
+      "highlight": "Eksklusif Bali",
+      "description": "Jelajahi keindahan budaya dan alam Bali dengan kenyamanan maksimal bersama armada mewah EVO BALI Ride."
+    },
+    {
+      "image": "/images/bali-beach.png",
+      "subtitle": "VIP Transfer",
+      "title": "Layanan Antar Jemput",
+      "highlight": "Premium",
+      "description": "Nikmati kemewahan perjalanan dari bandara ke resort impian Anda. EVO BALI Ride adalah pilihan utama rental mobil VVIP."
+    }
+  ],
+  "productFeatures": [
+    {
+      "iconName": "Users",
+      "label": "6 Kursi Premium",
+      "value": "Kelas Eksekutif"
+    },
+    {
+      "iconName": "Zap",
+      "label": "Full Electric",
+      "value": "Zero Emission"
+    },
+    {
+      "iconName": "Wind",
+      "label": "Klima Ganda",
+      "value": "Cabin Comfort"
+    },
+    {
+      "iconName": "Smartphone",
+      "label": "EVO BALI Ride App",
+      "value": "Easy Booking"
+    },
+    {
+      "iconName": "Shield",
+      "label": "Asuransi Penuh",
+      "value": "Trip Protection"
+    },
+    {
+      "iconName": "Star",
+      "label": "Rating 5",
+      "value": "Top Rated"
+    }
+  ]
+}

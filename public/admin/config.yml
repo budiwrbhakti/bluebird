@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: budiwrbhakti/bluebird
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "content"
+    label: "Website Content"
+    files:
+      - label: "Landing Page Data"
+        name: "landing"
+        file: "src/data/content.json"
+        format: json
+        fields:
+          - label: "Hero Slider Items"
+            name: "heroItems"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Highlight", name: "highlight", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Product Features"
+            name: "productFeatures"
+            widget: "list"
+            fields:
+              - { label: "Icon Name", name: "iconName", widget: "select", options: ["Users", "Zap", "Wind", "Smartphone", "Shield", "Star"] }
+              - { label: "Label (e.g. 6 Kursi Premium)", name: "label", widget: "string" }
+              - { label: "Value (e.g. Kelas Eksekutif)", name: "value", widget: "string" }

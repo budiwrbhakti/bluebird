@@ -2,14 +2,17 @@
 import { motion } from "framer-motion";
 import { Users, Zap, Smartphone, Shield, Wind, Star } from "lucide-react";
 
-const SPECS = [
-  { icon: Users, label: "6 Kursi Premium", value: "Kelas Eksekutif" },
-  { icon: Zap, label: "Full Electric", value: "Zero Emission" },
-  { icon: Wind, label: "Klima Ganda", value: "Cabin Comfort" },
-  { icon: Smartphone, label: "EVO BALI Ride App", value: "Easy Booking" },
-  { icon: Shield, label: "Asuransi Penuh", value: "Trip Protection" },
-  { icon: Star, label: "Rating 5", value: "Top Rated" },
-];
+import contentData from "../data/content.json";
+
+const ICON_MAP = {
+  Users, Zap, Smartphone, Shield, Wind, Star
+};
+
+const SPECS = contentData.productFeatures.map(f => ({
+  icon: ICON_MAP[f.iconName as keyof typeof ICON_MAP] || Star,
+  label: f.label,
+  value: f.value
+}));
 
 export default function ProductSection() {
   return (

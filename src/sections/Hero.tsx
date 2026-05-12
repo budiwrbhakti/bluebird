@@ -2,29 +2,9 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const slides = [
-  {
-    image: "/images/bali-temple.png",
-    subtitle: "Premium Car Rental",
-    title: "Sewa Mobil",
-    highlight: "Eksklusif Bali",
-    description: "Jelajahi keindahan budaya dan alam Bali dengan kenyamanan maksimal bersama armada mewah EVO BALI Ride.",
-  },
-  {
-    image: "/images/bali-beach.png",
-    subtitle: "Vacation Mobility",
-    title: "Liburan Pantai",
-    highlight: "Lebih Nyaman",
-    description: "Perjalanan menuju destinasi wisata favorit di Bali menjadi lebih elegan dan berkesan dengan layanan rental profesional kami.",
-  },
-  {
-    image: "/images/bali-resort.png",
-    subtitle: "VIP Transfer",
-    title: "Layanan Antar Jemput",
-    highlight: "Premium",
-    description: "Nikmati kemewahan perjalanan dari bandara ke resort impian Anda. EVO BALI Ride adalah pilihan utama rental mobil VVIP.",
-  },
-];
+import contentData from "../data/content.json";
+
+const slides = contentData.heroItems;
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
