@@ -6,7 +6,7 @@ const SPECS = [
   { icon: Users, label: "6 Kursi Premium", value: "Kelas Eksekutif" },
   { icon: Zap, label: "Full Electric", value: "Zero Emission" },
   { icon: Wind, label: "Klima Ganda", value: "Cabin Comfort" },
-  { icon: Smartphone, label: "MyVigor App", value: "Easy Booking" },
+  { icon: Smartphone, label: "EVO BALI Ride App", value: "Easy Booking" },
   { icon: Shield, label: "Asuransi Penuh", value: "Trip Protection" },
   { icon: Star, label: "Rating 5", value: "Top Rated" },
 ];

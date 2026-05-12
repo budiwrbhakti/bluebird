@@ -8,7 +8,7 @@ const slides = [
     subtitle: "Premium Car Rental",
     title: "Sewa Mobil",
     highlight: "Eksklusif Bali",
-    description: "Jelajahi keindahan budaya dan alam Bali dengan kenyamanan maksimal bersama armada mewah Vigor Ride.",
+    description: "Jelajahi keindahan budaya dan alam Bali dengan kenyamanan maksimal bersama armada mewah EVO BALI Ride.",
   },
   {
     image: "/images/bali-beach.png",
@@ -22,7 +22,7 @@ const slides = [
     subtitle: "VIP Transfer",
     title: "Layanan Antar Jemput",
     highlight: "Premium",
-    description: "Nikmati kemewahan perjalanan dari bandara ke resort impian Anda. Vigor Ride adalah pilihan utama rental mobil VVIP.",
+    description: "Nikmati kemewahan perjalanan dari bandara ke resort impian Anda. EVO BALI Ride adalah pilihan utama rental mobil VVIP.",
   },
 ];
 

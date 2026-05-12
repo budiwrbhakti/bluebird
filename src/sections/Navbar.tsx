@@ -37,7 +37,7 @@ export default function Navbar() {
                 </svg>
               </div>
               <div className="flex flex-col">
-                <span className="text-luxury-gold font-bold text-lg leading-tight tracking-wider">VIGOR</span>
+                <span className="text-luxury-gold font-bold text-lg leading-tight tracking-wider">EVO BALI</span>
                 <span className="text-luxury-platinum-muted text-[10px] leading-tight tracking-[0.3em] uppercase">Group</span>
               </div>
             </div>

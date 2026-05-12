@@ -14,7 +14,7 @@ export default function Footer() {
               </svg>
             </div>
             <div>
-              <span className="text-luxury-gold font-bold text-xl block tracking-wider">VIGOR</span>
+              <span className="text-luxury-gold font-bold text-xl block tracking-wider">EVO BALI</span>
               <span className="text-luxury-platinum-muted text-sm tracking-[0.3em] uppercase">Group</span>
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-10">
           {/* Address */}
           <div>
-            <h3 className="text-luxury-gold font-bold text-base tracking-wider uppercase mb-4">Vigor Main Office</h3>
+            <h3 className="text-luxury-gold font-bold text-base tracking-wider uppercase mb-4">EVO BALI Main Office</h3>
             <p className="text-luxury-platinum-muted text-sm leading-relaxed">
               Jl. Mampang Prapatan Raya<br />
               No. 60,<br />
@@ -82,7 +82,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-luxury-gold/15">
           <p className="text-luxury-platinum-muted/50 text-xs text-center tracking-widest uppercase">
-            © {new Date().getFullYear()} Vigor Group. All Rights Reserved.
+            © {new Date().getFullYear()} EVO BALI Group. All Rights Reserved.
           </p>
         </div>
       </div>
